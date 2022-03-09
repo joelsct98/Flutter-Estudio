@@ -22,44 +22,15 @@ class MyApp extends StatelessWidget {
 
 
   Scaffold myHomePage() {
-
-    List<String> names = [
-      'martin-cham',
-      'oscar-kun',
-      'joel-san',
-      'martin-cham',
-      'oscar-kun',
-      'joel-san',
-      'martin-cham',
-      'oscar-kun',
-      'joel-san',
-      'martin-cham',
-      'oscar-kun',
-      'joel-san',
-    ];
     return Scaffold(
         appBar: AppBar(
           title: Text("ListView"),
         ),
-        body: ListView.builder(
-          itemCount: names.length,
-          itemBuilder: (BuildContext context, int i){
-            final name= names[i];
-            return ListTile(
-              title: Text(name),
-              leading: Icon(Icons.person),
-              onTap: (){
-                print(name);
-              },
-            );
-          },
-          /**
-           * para hacer una lista infinita*//*
-        itemBuilder: (BuildContext context, int index) {
-          return Card(
-            child: Text("hola")
-          );
-        }*/
+        body: ListView(
+          children: <Widget>[
+            Image.asset("assets/luna.jpg"),
+
+          ],
         )
     );
   }
