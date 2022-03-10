@@ -20,8 +20,10 @@ class MyApp extends StatelessWidget {
     );
   }
 
-
-  Scaffold myHomePage() {
+/**
+ * Como usar assets en la aplicacion
+ * */
+/*  Scaffold myHomePage() {
     return Scaffold(
         appBar: AppBar(
           title: Text("ListView"),
@@ -33,7 +35,7 @@ class MyApp extends StatelessWidget {
           ],
         )
     );
-  }
+  }*/
 }
 
 
