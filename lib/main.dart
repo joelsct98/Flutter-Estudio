@@ -14,9 +14,28 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        fontFamily: "Gloria Hallelullah",
       ),
       home: myHomePage()
+    );
+  }
+
+  /**
+   * todo*
+   * https://www.youtube.com/watch?v=l_T9nCfKPFw&list=PLl_hIu4u7P677H9f6zPOHiOz2izkvQq2E&index=25
+   * mirar video para ver lo de las fuentes
+   * */
+  Scaffold myHomePage() {
+    return Scaffold(
+        appBar: AppBar(
+          title: Text("ListView"),
+        ),
+        body: ListView(
+          children: <Widget>[
+            Image.asset("assets/luna.jpg"),
+
+          ],
+        )
     );
   }
 
