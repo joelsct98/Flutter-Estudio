@@ -1,30 +1,125 @@
-import 'package:flutter/cupertino.dart';
+
+/**
+ * usos que podemos darle a StatefulWidget
+ * 1.- es una extension que se uso para comportamientos dinamicos y da facilidades
+ * 2.- como podemos ver, podemos establecer metodos para cuando se ejecute
+ *        la app o la pantalla y tambn cuando se destruye
+ * 3.- podemos establecer varios metodos para reutilizarlos*/
+
+/*import 'dart:async';
+
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(const MyApp());
-}
-
+void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        fontFamily: "Gloria Hallelullah",
+      title: 'Material App',
+      home: MyHomePage(),
+    );
+  }
+}
+
+class MyHomePage extends StatefulWidget {
+  const MyHomePage({Key? key}) : super(key: key);
+
+  @override
+  _MyHomePageState createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> with SingleTickerProviderStateMixin {
+  late AnimationController _controller;
+  String name= "Comemela";
+  double progessValue= 0.0;
+  bool switchValue= false;
+
+
+  //antes de pintar primero pasa por este metodo
+  @override
+  void initState() {
+    super.initState();
+    //tiempo para que se ejecute un método
+    Timer.periodic(Duration(seconds: 1), (value){
+      changedName();
+    });
+    _controller = AnimationController(vsync: this);
+  }
+
+  //Si el Widget se destruye salta este metodo
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
+  //esta funcion lo podemos usar para empezar a pimtar en la app
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(),
+      body: Center(
+        child: Column(
+          children: [
+            Text(
+              this.name,
+              style: TextStyle(fontSize: 30),
+            ),
+            LinearProgressIndicator(value: progessValue),
+            Switch(
+              value: switchValue,
+              onChanged: (value){
+                setState(() {
+                  this.switchValue= value;
+                });
+              },
+            )
+          ],
+        ),
       ),
-      home: myHomePage()
+      floatingActionButton: FloatingActionButton(
+        onPressed: changedName,
+      ),
     );
   }
 
-  /**
+  void changedName() {
+    setState(() {
+      if(name == "Comemela"){
+        name='Puto';
+      }else{
+        name = "Comemela";
+      }
+    });
+    progessValue += 0.1;
+  }
+}*/
+
+
+/*
+
+  class MyHomePage extends StatefulWidget {
+
+    MyHomePage({Key key}) : super(key: key);
+
+    _MyHomePageState createState() => _MyHomePageState();
+  }
+
+  class _MyHomePageState {
+    @override
+    Widget build (BuildContext context){
+      return Scaffold();
+    }
+  }
+*/
+
+/**
    * todo*
    * https://www.youtube.com/watch?v=l_T9nCfKPFw&list=PLl_hIu4u7P677H9f6zPOHiOz2izkvQq2E&index=25
    * mirar video para ver lo de las fuentes
    * */
+/*
   Scaffold myHomePage() {
     return Scaffold(
         appBar: AppBar(
@@ -38,6 +133,7 @@ class MyApp extends StatelessWidget {
         )
     );
   }
+*/
 
 /**
  * Como usar assets en la aplicacion
@@ -54,13 +150,10 @@ class MyApp extends StatelessWidget {
           ],
         )
     );
-  }*/
-}
+  }
 
-
-
-
-
+  }
+  */
 
   /**
    * tenemos un listView
@@ -102,6 +195,7 @@ class MyApp extends StatelessWidget {
             },
           );
         },
+        }
         */
 /**
          * para hacer una lista infinita*//*
@@ -360,6 +454,7 @@ class MyApp extends StatelessWidget {
   }
 }*/
 
+/*
 
 class MyHomePage extends StatelessWidget {
   @override
@@ -386,6 +481,7 @@ class MyHomePage extends StatelessWidget {
     );
   }
 }
+*/
 
 
 
