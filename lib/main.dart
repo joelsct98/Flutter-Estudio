@@ -1,4 +1,151 @@
 
+/*
+import 'dart:html';
+import 'package:flutter/material.dart';
+
+void main() => runApp(MyApp());
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Material App',
+      home: MyHomePage(),
+    );
+  }
+}
+
+
+class MyHomePage extends StatefulWidget {
+  const MyHomePage({Key? key}) : super(key: key);
+
+  @override
+  _MyHomePageState createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> with SingleTickerProviderStateMixin {
+  late AnimationController _controller;
+  String name= "Comemela";
+  double progessValue= 0.0;
+  bool switchValue= false;
+
+
+  //antes de pintar primero pasa por este metodo
+  @override
+  void initState() {
+    super.initState();
+  }
+
+  //Si el Widget se destruye salta este metodo
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
+  //esta funcion lo podemos usar para empezar a pimtar en la app
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Gestore Detecttor'),
+      ),
+      body: Center(
+        child: Column(
+          children: <Widget>[
+            RaisedButton(
+                color: Colors.green,
+                textColor: Colors.white,
+                child: Text("RAised"),
+                onPressed: onPressed
+            ),
+            FlatButton(
+                child: Text("RAised"),
+                onPressed: onPressed
+            ),
+            IconButton(
+                icon: Icon(Icons.smart_button),
+                onPressed: onPressed
+            ),
+            OutlineButton(
+              onPressed: onPressed,
+              color: Colors.green,
+              textColor: Colors.white,
+              child: Text(
+                "RAised",
+                style: TextStyle(fontSize: 40),
+              ),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(25)),
+                borderSide: BorderSide(color: Colors.red),
+              ),
+          ],
+        ),
+      )
+    );
+  }
+
+  void onPressed() {
+    print("buenardo");
+  }
+
+}*/
+
+
+/*
+
+
+class ListItem extends StatelessWidget {
+  const ListItem({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+
+
+  }
+}
+*/
+
+
+
+
+/**como usar un StatefulWidget (sintaxis y ejemplos)
+ * GestureDetector:
+ * lo podemos usar para poder obtener eventos de la pantalla y hacer cosas con ello
+ * Desde un servicio o lo que sea*/
+/*class ListItem extends StatelessWidget {
+  const ListItem({Key? key}) : super(key: key);
+  
+  @override
+  Widget build(BuildContext context) {
+
+    return GestureDetector(
+      onTap: _onTap,
+      onLongPress: _onLongPress,
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Row(
+          children: <Widget>[
+            Icon(Icons.folder),
+            SizedBox(
+              width: 20,
+            ),
+            Text("Carpeta de porno(no abrir)")
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+void _onTap() {
+  print('hola');
+}
+
+void _onLongPress() {
+  print("Se ha mantenido el click");
+}*/
+
 /**
  * usos que podemos darle a StatefulWidget
  * 1.- es una extension que se uso para comportamientos dinamicos y da facilidades
