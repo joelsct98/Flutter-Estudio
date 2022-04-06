@@ -1,7 +1,7 @@
 
-/*
-import 'dart:html';
 import 'package:flutter/material.dart';
+import 'package:untitled/pages/MyHomePage.dart';
+import 'package:untitled/pages/secondPage.dart';
 
 void main() => runApp(MyApp());
 
@@ -10,86 +10,17 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Material App',
-      home: MyHomePage(),
+      // home: MyHomePage(),
+      initialRoute: "/",
+      routes: {
+        "/":(BuildContext context) => MyHomePage(),
+        "/second": (BuildContext context) => SecondPage(),
+      },
     );
   }
 }
 
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key}) : super(key: key);
-
-  @override
-  _MyHomePageState createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> with SingleTickerProviderStateMixin {
-  late AnimationController _controller;
-  String name= "Comemela";
-  double progessValue= 0.0;
-  bool switchValue= false;
-
-
-  //antes de pintar primero pasa por este metodo
-  @override
-  void initState() {
-    super.initState();
-  }
-
-  //Si el Widget se destruye salta este metodo
-  @override
-  void dispose() {
-    _controller.dispose();
-    super.dispose();
-  }
-
-  //esta funcion lo podemos usar para empezar a pimtar en la app
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Gestore Detecttor'),
-      ),
-      body: Center(
-        child: Column(
-          children: <Widget>[
-            RaisedButton(
-                color: Colors.green,
-                textColor: Colors.white,
-                child: Text("RAised"),
-                onPressed: onPressed
-            ),
-            FlatButton(
-                child: Text("RAised"),
-                onPressed: onPressed
-            ),
-            IconButton(
-                icon: Icon(Icons.smart_button),
-                onPressed: onPressed
-            ),
-            OutlineButton(
-              onPressed: onPressed,
-              color: Colors.green,
-              textColor: Colors.white,
-              child: Text(
-                "RAised",
-                style: TextStyle(fontSize: 40),
-              ),
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(25)),
-                borderSide: BorderSide(color: Colors.red),
-              ),
-          ],
-        ),
-      )
-    );
-  }
-
-  void onPressed() {
-    print("buenardo");
-  }
-
-}*/
 
 
 /*
